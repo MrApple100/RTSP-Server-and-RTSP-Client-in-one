@@ -1,1 +1,3 @@
 include ':app', ':rtspserver'
+include ':library-client-rtsp'
+
