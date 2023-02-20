@@ -17,10 +17,10 @@ private const val DEFAULT_RTSP_PASSWORD = ""
 private const val LIVE_PARAMS_FILENAME = "live_params"
 
 @SuppressLint("LogNotTimber")
-class LiveViewModel : ViewModel() {
+class ReceiveViewModel : ViewModel() {
 
     companion object {
-        private val TAG: String = LiveViewModel::class.java.simpleName
+        private val TAG: String = ReceiveViewModel::class.java.simpleName
         private const val DEBUG = true
     }
 

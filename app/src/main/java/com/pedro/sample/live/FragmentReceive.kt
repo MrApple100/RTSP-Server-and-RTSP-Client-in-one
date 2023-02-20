@@ -1,4 +1,4 @@
-package com.alexvas.rtsp.demo.live
+package com.pedro.sample.live
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -11,19 +11,19 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.*
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.alexvas.rtsp.demo.databinding.FragmentLiveBinding
+import com.alexvas.rtsp.demo.live.ReceiveViewModel
 import com.alexvas.rtsp.widget.RtspSurfaceView
+import com.pedro.sample.databinding.FragmentReceiveBinding
 import java.util.concurrent.atomic.AtomicBoolean
 
 
 @SuppressLint("LogNotTimber")
-class LiveFragment : Fragment() {
+class FragmentReceive : Fragment() {
 
-    private lateinit var binding: FragmentLiveBinding
-    private lateinit var liveViewModel: LiveViewModel
+    private lateinit var binding: FragmentReceiveBinding
+    private lateinit var liveViewModel: ReceiveViewModel
 
     private val rtspStatusListener = object: RtspSurfaceView.RtspStatusListener {
         override fun onRtspStatusConnecting() {
@@ -103,8 +103,8 @@ class LiveFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         if (DEBUG) Log.v(TAG, "onCreateView()")
 
-        liveViewModel = ViewModelProvider(this).get(LiveViewModel::class.java)
-        binding = FragmentLiveBinding.inflate(inflater, container, false)
+        liveViewModel = ViewModelProvider(this).get(ReceiveViewModel::class.java)
+        binding = FragmentReceiveBinding.inflate(inflater, container, false)
 
         binding.svVideo.setStatusListener(rtspStatusListener)
         binding.etRtspRequest.addTextChangedListener(object : TextWatcher {
@@ -198,7 +198,7 @@ class LiveFragment : Fragment() {
     }
 
     companion object {
-        private val TAG: String = LiveFragment::class.java.simpleName
+        private val TAG: String = FragmentReceive::class.java.simpleName
         private const val DEBUG = true
     }
 
