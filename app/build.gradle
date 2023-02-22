@@ -13,6 +13,8 @@ android {
         targetSdkVersion 32
         versionCode version_code
         versionName version_name
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
