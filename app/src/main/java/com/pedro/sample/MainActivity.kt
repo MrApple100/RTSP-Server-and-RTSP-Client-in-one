@@ -7,24 +7,28 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
   private val PERMISSIONS = arrayOf(Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA,
     Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
+  private lateinit var b_camera_demo: Button
+
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     setContentView(R.layout.activity_main)
+    b_camera_demo = findViewById(R.id.b_camera_demo)
     b_camera_demo.setOnClickListener {
       if (!hasPermissions(this, *PERMISSIONS)) {
         ActivityCompat.requestPermissions(this, PERMISSIONS, 1)
       } else {
-        startActivity(Intent(this, CameraDemoActivity::class.java))
+        startActivity(Intent(this, ActivityReceiveSend::class.java))
       }
     }
   }

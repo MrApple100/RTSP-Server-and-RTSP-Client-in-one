@@ -7,6 +7,7 @@ plugins {
 apply from: '../constants.gradle'
 apply plugin: 'com.android.library'
 
+//why it here?
 project.afterEvaluate {
     publishing {
         publications {
