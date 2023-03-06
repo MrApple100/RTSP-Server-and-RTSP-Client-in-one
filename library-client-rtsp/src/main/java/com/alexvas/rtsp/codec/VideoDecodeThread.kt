@@ -79,7 +79,10 @@ class VideoDecodeThread (
                         // Release input buffer
                         decoder.queueInputBuffer(inIndex, 0, 0, 0L, 0)
                     } else {
-                        println(DecodeUtil.byteArrayToHexString(frame.data) + "${frame.offset}, ${frame.length}")
+                    //    println("${DecodeUtil.byteArrayToHexString(frame.data).subSequence(0,100)}")
+
+
+                        Log.d("INPUTINPUT","${DecodeUtil.byteArrayToHexString(frame.data).subSequence(0,(if(frame.data.size<100)  (frame.data.size) else 100))}  |||||${frame.offset} |||| ${frame.length}")
                         byteBuffer?.put(frame.data, frame.offset, frame.length)
                         decoder.queueInputBuffer(inIndex, frame.offset, frame.length, frame.timestamp, 0)
                     }

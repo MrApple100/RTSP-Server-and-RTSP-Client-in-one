@@ -226,6 +226,8 @@ public class NetUtils {
         int readBytes;
         int totalReadBytes = 0;
         do {
+            System.out.println("READDATA "+offset+" "+(offset + totalReadBytes) + " " + (length - totalReadBytes));
+
             readBytes = inputStream.read(buffer, offset + totalReadBytes, length - totalReadBytes);
             if (readBytes > 0)
                 totalReadBytes += readBytes;

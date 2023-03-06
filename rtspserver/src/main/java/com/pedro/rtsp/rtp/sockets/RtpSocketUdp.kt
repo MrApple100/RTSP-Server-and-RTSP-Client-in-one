@@ -69,7 +69,7 @@ open class RtpSocketUdp(videoSourcePort: Int, audioSourcePort: Int) : BaseRtpSoc
         multicastSocketAudio?.send(datagramPacket)
       }
       if (isEnableLogs) {
-        Log.i(TAG, "wrote packet: ${(if (rtpFrame.isVideoFrame()) "Video" else "Audio")}, size: ${rtpFrame.length}, port: ${rtpFrame.rtpPort}")
+       // Log.i(TAG, "wrote packet: ${(if (rtpFrame.isVideoFrame()) "Video" else "Audio")}, size: ${rtpFrame.length}, port: ${rtpFrame.rtpPort}")
       }
     }
   }

@@ -60,8 +60,8 @@ public class VideoEncoder extends BaseEncoder implements GetCameraData {
   private int height = 480;
   private int fps = 30;
   private int bitRate = 1200 * 1024; //in kbps
-  private int rotation = 90;
-  private int iFrameInterval = 2;
+  private int rotation = 0;
+  private int iFrameInterval = 0;
   //for disable video
   private final FpsLimiter fpsLimiter = new FpsLimiter();
   private String type = CodecUtil.H264_MIME;
