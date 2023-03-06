@@ -171,6 +171,7 @@ class FragmentSend : Fragment(), ConnectCheckerRtsp, View.OnClickListener,
   }
 
   override fun surfaceDestroyed(surfaceHolder: SurfaceHolder) {
+      //comment all to dont destroy when slide to client
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
       if (rtspServerCamera1.isRecording) {
         rtspServerCamera1.stopRecord()
