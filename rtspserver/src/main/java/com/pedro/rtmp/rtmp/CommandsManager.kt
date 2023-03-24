@@ -57,8 +57,8 @@ abstract class CommandsManager {
   var audioDisabled = false
   var videoDisabled = false
 
-  protected var width = 640
-  protected var height = 480
+  protected var width = 1920
+  protected var height = 1080
   var fps = 30
   protected var sampleRate = 44100
   protected var isStereo = true

@@ -38,7 +38,7 @@ public abstract class BaseEncoder implements EncoderCallback {
   protected String TAG = "BaseEncoder";
   private final MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
   private HandlerThread handlerThread;
-  protected BlockingQueue<Frame> queue = new ArrayBlockingQueue<>(80);
+  protected BlockingQueue<Frame> queue = new ArrayBlockingQueue<>(1);
   protected MediaCodec codec;
   protected static long presentTimeUs;
   protected volatile boolean running = false;
@@ -143,7 +143,7 @@ public abstract class BaseEncoder implements EncoderCallback {
       } catch (Exception ignored) { }
     }
     queue.clear();
-    queue = new ArrayBlockingQueue<>(80);
+    queue = new ArrayBlockingQueue<>(1);
     try {
       codec.stop();
       codec.release();

@@ -56,10 +56,10 @@ public class VideoEncoder extends BaseEncoder implements GetCameraData {
   //surface to buffer encoder
   private Surface inputSurface;
 
-  private int width = 640;
-  private int height = 480;
+  private int width = 1920;
+  private int height = 1080;
   private int fps = 30;
-  private int bitRate = 1200 * 1024; //in kbps
+  private int bitRate = 8000 * 1024; //in kbps
   private int rotation = 0;
   private int iFrameInterval = 0;
   //for disable video
